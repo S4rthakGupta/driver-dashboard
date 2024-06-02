@@ -1,0 +1,22 @@
+<!-- This below line will include (EJS Template) all the HTML as well as the BOOTSTRAP in this page. -->
+<%- include('../layout') %>
+
+<!-- This is the Login Page. -->
+<div class="container mt-5">
+    <h1>Login</h1>
+    <p>Under construction</p>
+    <!-- Placeholder for future login and signup form -->
+    <form id="loginForm" onsubmit="return validateLoginForm()">
+        <div class="form-group">
+            <label for="username">Username <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="username" placeholder="Enter username">
+            <span id="usernameError" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label for="password">Password <span class="text-danger">*</span></label>
+            <input type="password" class="form-control" id="password" placeholder="Enter password">
+            <span id="passwordError" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

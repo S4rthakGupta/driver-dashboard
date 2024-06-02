@@ -1,0 +1,58 @@
+// Name: Sarthak Gupta
+// Student ID: 8971797
+// Email: sgupta1797@conestogac.on.ca
+// Subject: Full Stack Programming
+// Group:1
+
+
+
+Firstly I created a folder named: 
+"SarthakGupta_Assignment1"
+
+then I opened it with VS code and did Ctrl + ` to open the Terminal.
+
+
+then I ran few commands.
+npm init -y 
+-- this will create dependecies and a random package as well.
+
+something like this
+{
+  "name": "first-node-project",
+  "version": "1.0.0",
+  "description": "This is my first node project for Assignement 1.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sarthak Gupta",
+  "license": "ISC"
+}
+
+then I ran few npm commands which are as follows:
+npm install node
+npm install express
+npm install ejs
+-- these lines will create packages in node modules folder.
+
+then I ran this command below so that I don't have to ran the server again and again everything I make changes.
+npm install nodemon
+
+then I ran nodemon .\app.js
+
+--then I created views folder
+
+--Then I created layout.ejs first under views folder
+
+--Then I created partials folder under views and inside that added header.ejs
+
+--then I created a folder named pages and added pages in it such as g.ejs, g2.ejs, dashboard.ejs, login.ejs, home.ejs
+
+--then created a folder named public and under that created a folder with named CSS and gave the link of that CSS sheet in layout.ejs
+
+--updated layout.ejs and other pages as well to use bootstrap features in it.
+
+-- I also added code validation's using vanilla JS in the code and the code is executable completely with no console errors as well.
+
+-- Finally in the last, I adjusted the CSS according to the requirements and I had to override some CSS in my CSS external sheet which is under the views folder.
+

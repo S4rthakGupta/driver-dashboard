@@ -1,0 +1,42 @@
+<!-- This below line will include (EJS Template) all the HTML as well as the BOOTSTRAP in this page. -->
+<%- include('../layout') %>
+
+
+<!-- This is the G License Page. -->
+<div class="container mt-5">
+    <h1>G Test Booking</h1>
+    <form id="gForm" onsubmit="return validateGForm()">
+        <div class="form-group">
+            <label for="licenseNumber">License Number <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="licenseNumber" placeholder="Enter your license number (8 characters)" maxlength="8">
+            <span id="licenseNumberError" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+<!-- Adding Validation using Vanilla JS -->
+<script>
+    function validateGForm() 
+    {
+        let isValid = true;
+        
+        // Resetting previous error messages
+        document.getElementById('licenseNumberError').innerText = '';
+
+        // Validating License Number
+        const licenseNumber = document.getElementById('licenseNumber').value;
+        const licenseNumberPattern = /^[a-zA-Z0-9]{8}$/;
+        if (!licenseNumber) 
+        {
+            document.getElementById('licenseNumberError').innerText = 'License number is required';
+            isValid = false;
+        } 
+        else if (!licenseNumberPattern.test(licenseNumber)) 
+        {
+            document.getElementById('licenseNumberError').innerText = 'License number must be 8 alphanumeric characters';
+            isValid = false;
+        }
+        return isValid;
+    }
+</script>

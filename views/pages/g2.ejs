@@ -1,0 +1,163 @@
+<!-- This below line will include (EJS Template) all the HTML as well as the BOOTSTRAP in this page. -->
+<%- include('../layout') %>
+
+
+<!-- This is the G2 License Page. -->
+<div class="container mt-5">
+    <h1>G2 Test Booking</h1>
+    <form id="g2Form" onsubmit="return validateForm()">
+        <div class="form-section mb-4">
+            <h2>Personal Information</h2>
+            <div class="form-group">
+                <label for="firstName">First Name <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="firstName" placeholder="Enter your first name">
+                <span id="firstNameError" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="lastName" placeholder="Enter your last name">
+                <span id="lastNameError" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="licenseNumber">License Number <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="licenseNumber" placeholder="Enter your license number (8 characters)" maxlength="8">
+                <span id="licenseNumberError" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="age">Age <span class="text-danger">*</span></label>
+                <input type="number" class="form-control" id="age" placeholder="Enter your age">
+                <span id="ageError" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="dob">Date of Birth <span class="text-danger">*</span></label>
+                <input type="date" class="form-control" id="dob">
+                <span id="dobError" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-section mb-4">
+            <h2>Car Information</h2>
+            <div class="form-group">
+                <label for="carMake">Make <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="carMake" placeholder="Enter car make">
+                <span id="carMakeError" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="carModel">Model <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="carModel" placeholder="Enter car model">
+                <span id="carModelError" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="carYear">Year <span class="text-danger">*</span></label>
+                <input type="number" class="form-control" id="carYear" placeholder="Enter car year">
+                <span id="carYearError" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="plateNumber">Plate Number <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="plateNumber" placeholder="Enter plate number">
+                <span id="plateNumberError" class="text-danger"></span>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+<!-- Adding Validations using Vanilla JS -->
+<script>
+    function validateForm() 
+    {
+        let isValid = true;
+
+        // Resetting previous error messages.
+        document.getElementById('firstNameError').innerText = '';
+        document.getElementById('lastNameError').innerText = '';
+        document.getElementById('licenseNumberError').innerText = '';
+        document.getElementById('ageError').innerText = '';
+        document.getElementById('dobError').innerText = '';
+        document.getElementById('carMakeError').innerText = '';
+        document.getElementById('carModelError').innerText = '';
+        document.getElementById('carYearError').innerText = '';
+        document.getElementById('plateNumberError').innerText = '';
+
+        // Validating First Name
+        const firstName = document.getElementById('firstName').value;
+        if (!firstName) 
+        {
+            document.getElementById('firstNameError').innerText = 'First name is required';
+            isValid = false;
+        }
+
+        // Validating Last Name
+        const lastName = document.getElementById('lastName').value;
+        if (!lastName) 
+        {
+            document.getElementById('lastNameError').innerText = 'Last name is required';
+            isValid = false;
+        }
+
+        // Validating License Number
+        const licenseNumber = document.getElementById('licenseNumber').value;
+        const licenseNumberPattern = /^[a-zA-Z0-9]{8}$/;
+        if (!licenseNumber) 
+        {
+            document.getElementById('licenseNumberError').innerText = 'License number is required';
+            isValid = false;
+        } 
+        else if (!licenseNumberPattern.test(licenseNumber)) 
+        {
+            document.getElementById('licenseNumberError').innerText = 'License number must be 8 alphanumeric characters';
+            isValid = false;
+        }
+
+        // Validating Age
+        const age = document.getElementById('age').value;
+        if (!age || age <= 0) 
+        {
+            document.getElementById('ageError').innerText = 'Valid age is required';
+            isValid = false;
+        }
+
+        // Validating Date of Birth
+        const dob = document.getElementById('dob').value;
+        if (!dob) 
+        {
+            document.getElementById('dobError').innerText = 'Date of birth is required';
+            isValid = false;
+        }
+
+        // Validating Car Make
+        const carMake = document.getElementById('carMake').value;
+        if (!carMake) 
+        {
+            document.getElementById('carMakeError').innerText = 'Car make is required';
+            isValid = false;
+        }
+
+        // Validating Car Model
+        const carModel = document.getElementById('carModel').value;
+        if (!carModel) 
+        {
+            document.getElementById('carModelError').innerText = 'Car model is required';
+            isValid = false;
+        }
+
+        // Validating Car Year
+        const carYear = document.getElementById('carYear').value;
+        if (!carYear || carYear <= 0) 
+        {
+            document.getElementById('carYearError').innerText = 'Valid car year is required';
+            isValid = false;
+        }
+
+        // Validating Plate Number
+        const plateNumber = document.getElementById('plateNumber').value;
+        if (!plateNumber) 
+        {
+            document.getElementById('plateNumberError').innerText = 'Plate number is required';
+            isValid = false;
+        }
+
+        return isValid;
+    }
+</script>

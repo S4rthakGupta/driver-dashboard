@@ -1,0 +1,104 @@
+body 
+{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: black;
+}
+
+.navbar 
+{
+    margin-bottom: 20px;
+}
+
+.container 
+{
+    margin-top: 20px;
+    color: black;
+    line-height: 10.5px;
+}
+
+footer 
+{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.mt-4 
+{
+    /* This is the override code of bootstrap by using !important */
+    margin-top: 0 !important; 
+}
+
+.navbar 
+{
+    margin-bottom: 0 !important; 
+    border-radius: 0% !important; 
+}
+
+.jumbotron 
+{
+    border-radius: 0% !important; 
+    padding: 9rem 2rem;
+}
+
+
+/* This below code is for the (dashboard.ejs) */
+.containerDashboard 
+{
+    margin-top: 20px;
+    color: black;
+    text-align: center;
+    line-height: 10.5px;
+}
+
+.h1
+{
+    font-size: 73px;
+    font-weight: bolder;
+    text-align: center;
+    padding-top: 120px;
+    color: white;
+}
+
+/* This below code is for the (driver_dashboard.ejs) */
+.lead
+{
+    text-align: center !important;
+}
+
+.display-4
+{
+    text-align: center !important;
+}
+
+.h4
+{
+    text-align: center;
+    margin-top: -17px;
+    font-size: 18px;
+    color: white;
+}
+
+/* This below code is for (g2.ejs) */
+.form-section 
+{
+    margin-bottom: 30px;
+}
+
+.form-section h2 
+{
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.btn-primary 
+{
+    background-color: #007bff;
+    border-color: #007bff;
+    margin-bottom: 20px;
+}
+
+.btn-primary:hover 
+{
+    background-color: #0056b3;
+    border-color: #004085;
+}
